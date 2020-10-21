@@ -2,28 +2,9 @@ library(ggplot2)
 library(shiny)
 library(tidyverse)
 library(plotly)
-library(here)
 library(lubridate)
 library(DT)
 library(kableExtra)
-
-
-
-cov_china <- read.csv(here("Data", "covid19.csv")) %>%
-    filter(countryEnglishName == "China",
-           cityEnglishName != "") %>% 
-    select(-continentName, -countryName, -provinceName, -city_zipCode, 
-           -continentEnglishName, -countryEnglishName, -cityName, -province_zipCode) %>%
-    mutate(month = month(updateTime), 
-           day = day(updateTime), 
-           week = week(updateTime))
-cov_china <- cov_china %>% 
-    mutate(date = as.Date(ymd_hms(cov_china$updateTime)))
-    
-cov_total <- read_csv(here("Data", "WHO-COVID-19-global-data.csv")) %>% 
-    filter(Country == "China") %>%
-    mutate(month = month(Date_reported))
-
 
 ui <- fluidPage(
     sidebarLayout(
