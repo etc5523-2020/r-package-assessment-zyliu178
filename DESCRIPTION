@@ -25,3 +25,4 @@ Imports:
     DT,
     kableExtra,
     magrittr
+    Tidyverse
