@@ -2,6 +2,7 @@
 library(tidyverse)
 library(here)
 library(lubridate)
+library(stringi)
 
 cov_china <- read.csv(here("Data-raw", "covid19.csv")) %>%
   filter(countryEnglishName == "China",
@@ -14,5 +15,9 @@ cov_china <- read.csv(here("Data-raw", "covid19.csv")) %>%
 cov_china <- cov_china %>% 
   mutate(date = as.Date(ymd_hms(cov_china$updateTime)))
 
-
+cov_china$cityEnglishName <- stri_replace_all_fixed(cov_china$cityEnglishName,
+                                                    c("ä", "ö", "ü", "Ä", "Ö", "Ü"), 
+                                                    c("ae", "oe", "ue", "Ae", "Oe", "Ue"),
+                                                    vectorize_all = FALSE)
+    
 usethis::use_data(cov_china, overwrite = TRUE)
