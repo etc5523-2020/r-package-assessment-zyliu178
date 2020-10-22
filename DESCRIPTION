@@ -1,5 +1,5 @@
 Package: CovChina
-Title: What the Package Does (One Line, Title Case)
+Title: Covid-19 Shiny app of China
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Zeyu",
@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "first.last@example.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description: This package uses coronavirus data of China to build a Shiny app, help users have a better and in-depth understanding of the current situation in China.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
@@ -27,3 +27,5 @@ Imports:
     magrittr,
     tidyverse,
     stringi
+Suggests:
+    testthat
