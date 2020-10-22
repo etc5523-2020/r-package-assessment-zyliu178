@@ -1,10 +1,9 @@
 ## code to prepare `cov_data` dataset goes here
 library(tidyverse)
-library(here)
 library(lubridate)
 library(stringi)
 
-cov_china <- read.csv(here("Data-raw", "covid19.csv")) %>%
+cov_china <- read.csv("Data-raw/covid19.csv") %>%
   filter(countryEnglishName == "China",
          cityEnglishName != "") %>% 
   select(-continentName, -countryName, -provinceName, -city_zipCode, 
@@ -14,7 +13,7 @@ cov_china <- read.csv(here("Data-raw", "covid19.csv")) %>%
          week = week(updateTime))
 cov_china <- cov_china %>% 
   mutate(date = as.Date(ymd_hms(cov_china$updateTime))) %>%
-  select(date, month, day , week, provinceEnglishName, cityEnglishName, city_confirmedCount, 
+  select(date, month, provinceEnglishName, cityEnglishName, city_confirmedCount, 
          city_curedCount, city_deadCount)
 
 cov_china$cityEnglishName <- stri_replace_all_fixed(cov_china$cityEnglishName,
