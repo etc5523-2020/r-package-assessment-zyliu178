@@ -5,7 +5,8 @@ library(lubridate)
 
 cov_total <- read_csv(here("Data-raw", "WHO-COVID-19-global-data.csv")) %>% 
   filter(Country == "China") %>%
-  mutate(month = month(Date_reported))
+  mutate(month = month(Date_reported)) %>%
+  select(Date_reported, month, Nwe_cases:Cumulative_deaths)
 
 usethis::use_data(cov_total, overwrite = TRUE)
 

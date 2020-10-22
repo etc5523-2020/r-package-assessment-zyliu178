@@ -13,7 +13,9 @@ cov_china <- read.csv(here("Data-raw", "covid19.csv")) %>%
          day = day(updateTime), 
          week = week(updateTime))
 cov_china <- cov_china %>% 
-  mutate(date = as.Date(ymd_hms(cov_china$updateTime)))
+  mutate(date = as.Date(ymd_hms(cov_china$updateTime))) %>%
+  select(date, month, day , week, provinceEnglishName, cityEnglishName, city_confirmedCount, 
+         city_curedCount, city_deadCount)
 
 cov_china$cityEnglishName <- stri_replace_all_fixed(cov_china$cityEnglishName,
                                                     c("ü", "ê"), 
