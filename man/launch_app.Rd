@@ -18,7 +18,9 @@ launch_app(
 Runs a Shiny application. This function normally does not return; interrupt R to stop the application.
 }
 \examples{
+\dontrun{ 
 launch_app()
 launch_app(display.mode = "showcase", launch.browser = TRUE)
+}
 
 }
