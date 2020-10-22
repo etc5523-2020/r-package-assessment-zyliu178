@@ -16,8 +16,8 @@ cov_china <- cov_china %>%
   mutate(date = as.Date(ymd_hms(cov_china$updateTime)))
 
 cov_china$cityEnglishName <- stri_replace_all_fixed(cov_china$cityEnglishName,
-                                                    c("ä", "ö", "ü", "Ä", "Ö", "Ü"), 
-                                                    c("ae", "oe", "ue", "Ae", "Oe", "Ue"),
+                                                    c("ü", "ê"), 
+                                                    c("u", "e"),
                                                     vectorize_all = FALSE)
     
 usethis::use_data(cov_china, overwrite = TRUE)
