@@ -16,9 +16,9 @@ RoxygenNote: 7.1.1
 URL: https://github.com/etc5523-2020/r-package-assessment-zyliu178
 BugReports: https://github.com/etc5523-2020/r-package-assessment-zyliu178/issues
 Depends: 
-    R (>= 2.10)
+    R (>= 2.10),
+    shiny
 Imports: 
-    shiny,
     ggplot2,
     plotly,
     lubridate,
@@ -26,6 +26,7 @@ Imports:
     kableExtra,
     magrittr,
     tidyverse,
-    stringi
+    stringi,
+    dplyr
 Suggests:
     testthat
