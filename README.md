@@ -21,6 +21,16 @@ with:
 devtools::install_github("etc5523-2020/r-package-assessment-zyliu178")
 ```
 
+# Data Description
+
+The first data used in this blog was obtained from: the Center for
+Systems Science and Engineering (CSSE), which is a research collective
+housed within the Department of Civil and Systems Engineering (CaSE) at
+Johns Hopkins University (JHU). The second data used in this blog was
+obtained from the World Health Organization, which is an international
+organization to create a better and healthier future for people all over
+the world.
+
 ## Example
 
 Trend of total confirmed cases in China
