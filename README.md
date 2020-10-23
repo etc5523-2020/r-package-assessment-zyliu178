@@ -7,8 +7,8 @@
 
 <!-- badges: end -->
 
-The goal of zeyushiny is to embed my shiny application and make it lunch
-via `launch_app()` function exported by my package.
+The goal of `zeyushiny` is to embed my shiny application and make it
+lunch via `launch_app()` function exported by my package.
 
 ## Installation
 
