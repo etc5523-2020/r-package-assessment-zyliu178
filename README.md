@@ -7,12 +7,14 @@
 
 <!-- badges: end -->
 
-The goal of zeyushiny is to …
+The goal of zeyushiny is to embed my shiny application and make it lunch
+via `launch_app()` function exported by my package.
 
 ## Installation
 
 You can install the development version from
-[GitHub](https://github.com/) with:
+[GitHub](https://github.com/etc5523-2020/r-package-assessment-zyliu178.git)
+with:
 
 ``` r
 # install.packages("devtools")
@@ -21,42 +23,27 @@ devtools::install_github("etc5523-2020/r-package-assessment-zyliu178")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+Trend of total confirmed cases in China
 
 ``` r
 library(zeyushiny)
-## basic example code
+# Load shiny application
+launch_app()
 ```
 
-## Example
-
-This is a basic example which shows you how to solve a common problem:
-
 ``` r
+library(tidyverse)
 library(zeyushiny)
-## basic example code
+cov_total %>% filter(month <=2) %>%
+  ggplot(aes(x = Date_reported, y = Cumulative_cases)) + 
+            geom_point() +
+            geom_smooth(se = FALSE) +
+            theme(legend.title = element_blank()) +
+            xlab("Date") +
+            theme_light() +
+            ylab("Total confirmed cases") +
+            theme(legend.position = "none") +
+            ggtitle("Trend of total confirmed cases in China")
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
-
-``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
-```
-
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date.
-
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub\!
+<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
