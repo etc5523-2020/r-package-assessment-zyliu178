@@ -20,7 +20,7 @@ library(CovChina)
 
 ## Introduction
 
-The shiny application is embedded in this package to analyze the epidemic situation in China. You can interact in the app to view the epidemic data of various provinces and cities in China. And this package also contains two function(`plot_city` and `select_city`) to re-factor one part of the user interface and server side logic of this shiny app.
+The shiny application is embedded in this package to analyze the epidemic(COV-19) situation in China. You can interact in the app to view the epidemic data of various provinces and cities in China. And this package also contains two function(`plot_city` and `select_city`) to re-factor one part of the user interface and server side logic of this shiny app.
 
 ## Installation
 
