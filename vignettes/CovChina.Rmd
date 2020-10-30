@@ -1,0 +1,45 @@
+---
+title: "Introduction to CovChina package"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to CovChina package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(CovChina)
+```
+
+## Introduction
+
+The shiny application is embedded in this package to analyze the epidemic(COV-19) situation in China. You can interact in the app to view the epidemic data of various provinces and cities in China. And this package also contains two function(`plot_city` and `select_city`) to re-factor one part of the user interface and server side logic of this shiny app.
+
+## Installation
+
+You can install the covidtrack package from [GitHub](https://github.com/etc5523-2020/r-package-assessment-yezihe-0063) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github(""etc5523-2020/r-package-assessment-zyliu178")
+```
+
+## Launching Shiny Application
+
+The application can be launched by using the following line of code:
+
+```r
+library(CovChina)
+launch_app()
+```
+
+## Data Description 
+
+The first data used in this blog was obtained from: the Center for Systems Science and Engineering (CSSE), which is a research collective housed within the Department of Civil and Systems Engineering (CaSE) at Johns Hopkins University (JHU). The second data used in this blog was obtained from the World Health Organization, which is an international organization to create a better and healthier future for people all over the world.
